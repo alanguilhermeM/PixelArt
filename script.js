@@ -76,3 +76,20 @@ window.onload = () => {
         divCor4.style.backgroundColor = armazenandoCores[2];
     };
 };
+
+const section2 = document.createElement('section');
+section2.id = 'pixel-board';
+body.appendChild(section2);
+for(let i = 0; i < 25; i+= 1) {
+    let pixel = document.createElement('div');
+    pixel.className = 'pixel';
+    pixel.style.backgroundColor = 'white';
+    pixel.style.border = 'black solid 1px';
+    pixel.style.display = 'inline-block'; 
+    pixel.style.height = '40px';
+    pixel.style.width = '40px';
+    pixel.style.padding = '15px';
+    pixel.style.margin = '5px';
+    pixel.style.marginBottom ='-4px';
+    section2.appendChild(pixel);
+};
