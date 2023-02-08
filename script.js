@@ -44,9 +44,35 @@ const coresAleatórias = () => {
     return color
 };
 
+
+const guardandoValores = () => {
+    let colorSource = [];
+    for(let i= 1; i < 4; i+= 1) {
+        colorSource.push(document.querySelectorAll('#color-palette div')[i].style.backgroundColor);
+    };
+    localStorage.setItem('colorPalette', JSON.stringify(colorSource));
+    
+};
+
 button.addEventListener('click', () => {
     for(let i = 2; i < 5; i+= 1) {
         let div_color = document.getElementById(`color-${i}`);
         div_color.style.backgroundColor = coresAleatórias();
     }
+    guardandoValores();
 });
+
+window.onload = () => {
+    if(localStorage.getItem('colorPalette') === null) {
+        const divCor1 = document.getElementById('color-1');
+        divCor1.style.backgroundColor = 'black';
+    } else {
+        const divCor2 = document.getElementById('color-2');
+        const divCor3 = document.getElementById('color-3');
+        const divCor4 = document.getElementById('color-4');
+        const armazenandoCores = JSON.parse(localStorage.getItem('colorPalette'));
+        divCor2.style.backgroundColor = armazenandoCores[0];
+        divCor3.style.backgroundColor = armazenandoCores[1];
+        divCor4.style.backgroundColor = armazenandoCores[2];
+    };
+};
