@@ -104,3 +104,17 @@ for(cor of Colors) {
         event.target.classList.add('selected');
     });
 };
+
+const pixelClicado = document.querySelectorAll('.pixel')
+for (let pixel of pixelClicado) {
+    pixel.addEventListener('click', () => {
+        const board = document.querySelector('#pixel-board');
+        const pixelBoard = [];
+        let selected = document.querySelector('.selected').style.backgroundColor;
+        pixelBoard.push(pixel.style.backgroundColor = `${selected}`);
+        for(let i =0; i < board.length; i+= 1) {
+            localStorage.setItem('pixelBoard', JSON.stringify(pixelBoard))
+
+        }
+    });
+};
