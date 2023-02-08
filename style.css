@@ -11,3 +11,9 @@ h1 {
     padding: 15px;
     display: inline-block;
 }
+
+button {
+    padding: 8px 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

@@ -29,3 +29,24 @@ section.appendChild(cor1);
 section.appendChild(cor2);
 section.appendChild(cor3);
 section.appendChild(cor4);
+
+const button = document.createElement('button');
+button.id = 'button-random-color';
+button.innerHTML = 'Cores aleatórias';
+body.appendChild(button);
+
+const coresAleatórias = () => {
+    const chars = '0123456789ABCDEF';
+    let color = '#';
+    for(let i = 0; i < 6; i+= 1) {
+        color += chars[Math.floor(Math.random() * 16)];
+    }
+    return color
+};
+
+button.addEventListener('click', () => {
+    for(let i = 2; i < 5; i+= 1) {
+        let div_color = document.getElementById(`color-${i}`);
+        div_color.style.backgroundColor = coresAleatórias();
+    }
+});
