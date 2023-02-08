@@ -25,3 +25,7 @@ button {
     margin-right: auto;
 
 }
+
+.selected {
+    border: black solid 1px;
+}

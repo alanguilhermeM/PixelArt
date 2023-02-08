@@ -93,3 +93,14 @@ for(let i = 0; i < 25; i+= 1) {
     pixel.style.marginBottom ='-4px';
     section2.appendChild(pixel);
 };
+
+const Colors = document.querySelectorAll('#color-palette div');
+for(cor of Colors) {
+    cor.addEventListener('click', (event) => {
+        const selected = document.querySelector('.selected');
+        if(selected) {
+            selected.classList.remove('selected');
+        }
+        event.target.classList.add('selected');
+    });
+};
