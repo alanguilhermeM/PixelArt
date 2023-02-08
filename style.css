@@ -1,3 +1,9 @@
+body {
+    text-align: center;
+    background-image: url(https://vsthemes.org/uploads/posts/2021-05/1622024685_2077531652_preview_sunnsns.webp);
+    background-size: 100% 155%;
+}
+
 h1 {
     margin-top: 150px;
 }
@@ -16,10 +22,11 @@ button {
     padding: 8px 40px;
     margin-top: 10px;
     margin-bottom: 10px;
+    border: black solid 2px;
 }
 
 #pixel-board {
-    margin-top: 15px;
+    margin-top: 45px;
     width: 32%;
     margin-left: auto;
     margin-right: auto;
@@ -28,4 +35,9 @@ button {
 
 .selected {
     border: black solid 1px;
+}
+
+#clear-board {
+    position: relative;
+    bottom: 435px;
 }

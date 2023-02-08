@@ -114,7 +114,17 @@ for (let pixel of pixelClicado) {
         pixelBoard.push(pixel.style.backgroundColor = `${selected}`);
         for(let i =0; i < board.length; i+= 1) {
             localStorage.setItem('pixelBoard', JSON.stringify(pixelBoard))
-
         }
     });
 };
+
+const clear = document.createElement('button');
+clear.id = 'clear-board';
+clear.innerHTML = 'Limpar';
+body.appendChild(clear);
+
+clear.addEventListener('click', () =>{
+    for(let pixel of pixelClicado) {
+        pixel.style.backgroundColor = 'white';
+    }
+});
